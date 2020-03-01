@@ -1,0 +1,7 @@
+{% extends ("base.html.twig") %}
+{% block body %}
+    <h4 style="color: #00a0d2;"> <i>Id: {{ post.id }}  {{ post.title }} </i></h4>
+    <h6 style="color: red">{{ post.category }}</h6>
+    <img style="text-align: center;width: 100%"
+  src="{{ '/uploads/' ~ post.image}}" alt="">
+{% endblock %}

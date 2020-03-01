@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body style="background-image: url('{{ asset('asset/5.png') }}'); background-size: 100%">
+
+ <table class="table table-striped">
+   <thead>
+      <tr class="table-info">
+        <td>ID</td>
+        <td>Title</td>
+        <td>Action</td>
+      </tr>
+   </thead>
+   <tbody>
+   {% for post in posts %}
+        <tr>
+          <td class="text-primary">{{ post.id }}</td>
+          <td>
+              <a class="text-warning" href="{{ path('post.show',{id: post.id} )}}">
+                  {{ post.title }}
+              </a>
+          </td>
+            <td>
+                <a  class="text-danger" href="{{ path('post.delete', {id: post.id}) }}">
+                    Delete
+                </a>
+            </td>
+        </tr>
+       {% endfor %}
+   </tbody>
+ </table>
+</body>
+{% endblock %}
